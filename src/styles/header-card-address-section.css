@@ -1,0 +1,115 @@
+.info-section {
+    display: flex;
+    align-items: center;
+    max-width: 1150px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1100px;
+    max-width: 100%;
+    height: auto;
+    margin-top: 2rem;
+    padding: 3rem 4rem 3rem 4rem;
+    display: flex;
+    gap: 2rem;
+    border: 1px solid none;
+    border-radius: 12px;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+    box-sizing: border-box; /* Garante que o padding não afete a largura total */
+}
+
+.separator-vertical {
+    width: 1px;
+    background-color: #E0E0E0;
+    margin: 1rem 0;
+    height: 80px;
+}
+
+.address-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.address-item h4 {
+    font-size: 1rem;
+    font-weight: 350;
+    color: var(--color-dark-blue);
+    margin-bottom: 5.5px;
+}
+
+.address-item p {
+    font-size: 1rem;
+    font-weight: 450;
+    color: var(--color-dark-gray);
+    padding: 2px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+}
+
+/* Style Responsivo */
+@media (max-width: 768px) {
+    .info-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        padding: 2rem;
+        margin-top: 1rem;
+    }
+
+    .separator-vertical {
+        display: none;
+    }
+
+    .address-item {
+        text-align: center;
+    }
+
+    .address-item h4 {
+        font-size: 0.9rem;
+    }
+
+    .address-item p {
+        font-size: 0.9rem;
+    }
+
+    .contact-item {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 1170px) {
+    .info-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        padding: 2rem;
+        margin-top: 2rem;
+    }
+
+    .separator-vertical {
+        display: none;
+    }
+
+    .address-item h4 {
+        font-size: 0.9rem;
+    }
+
+    .address-item p {
+        font-size: 0.9rem;
+    }
+
+}

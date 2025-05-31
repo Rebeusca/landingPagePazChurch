@@ -1,0 +1,94 @@
+.spotify-card {
+    font-family: Montserrat, Arial, sans-serif;
+    width: 100%;
+    max-width: 350px;
+    background-color: #c1defc;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    grid-column: 2;
+    grid-row: 3;
+    margin-top: -13rem;
+    justify-self: start;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.spotify-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+}
+
+.spotify-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem;
+}
+
+.spotify-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+    color: #191414;
+}
+
+.spotify-brand {
+    font-size: 2.5rem;
+    color: #1976d2;
+    margin-top: 0.2rem;
+}
+
+.spotify-subtitle {
+    margin: 0.5rem 0 0 0;
+    font-size: 0.9rem;
+    color: #191414;
+    font-weight: 500;
+}
+
+.spotify-iframe-container {
+    width: 100%;
+    padding: 0rem 1rem 1rem 1rem;
+    box-sizing: border-box;
+    line-height: 0;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.spotify-iframe-container iframe {
+    display: block;
+    width: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 800px) {
+    .spotify-card {
+        max-width: 100%;
+        padding-bottom: 1rem;
+    }
+
+    .spotify-iframe-container {
+        padding: 0rem 1rem 0rem 1rem;
+        margin: 0 auto;
+    }
+
+    .spotify-header {
+        padding: 1rem;
+    }
+
+    .spotify-title {
+        font-size: 1.5rem;
+    }
+
+    .spotify-brand {
+        font-size: 2rem;
+    }
+}

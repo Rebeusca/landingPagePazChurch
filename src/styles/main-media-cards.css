@@ -1,0 +1,162 @@
+.media-cards-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+}
+
+.media-card {
+    border-radius: 10px;
+    overflow: hidden;
+    height: 300px;
+    text-decoration: none;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+    min-width: calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+    height: 340px;
+    padding: 1rem;
+}
+
+.celulas-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.media-card-content {
+    text-align: center;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.app-media-card-title {
+    color: #4A4A4A;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.app-media-card-subtitle {
+    color: #4A4A4A;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.separator-horizontal {
+    height: 1px;
+    background-color: #E0E0E0;
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.media-card-logo {
+    max-width: 120px;
+    margin-top: auto;
+}
+
+.app-card {
+    background-color: #FFFFFF;
+    background-size: cover;
+    background-position: center;
+}
+
+.app-media-card-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.app-media-card-buttons img {
+    width: 300px;
+}
+
+.app-media-card-buttons img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.celulas-card {
+    background-image: url('/card-celula.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.celula-media-card-title {
+    color: #FFFFFF;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.celula-media-card-subtitle {
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 805px) {
+    .media-card {
+        height: 396px;
+    }
+
+}
+
+@media (max-width: 800px) {
+    .media-card {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-width: calc(100% - 0rem);
+        max-width: calc(100% - 0rem);
+        height: 400px;
+        margin: 0 auto; 
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0; /* Remove o padding para permitir que os cards ocupem toda a largura */
+        box-sizing: border-box;
+        height: 396px;
+    }
+
+    .app-media-card-title {
+        font-size: 1.8rem;
+        margin-top: 2.5rem;
+    }
+
+    .app-media-card-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 0;
+    }
+
+    .app-media-card-buttons {
+        gap: 1rem;
+        margin-top: 0;
+    }
+
+    .celula-media-card-title {
+        font-size: 1.8rem;
+        margin-top: 2.5rem;
+    }
+
+    .celula-media-card-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 0;
+        max-width: 80%;
+    }
+}
