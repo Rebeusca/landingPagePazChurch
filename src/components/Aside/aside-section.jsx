@@ -1,5 +1,5 @@
-import '../styles/aside-card-events.css';
-import '../styles/aside-card-forms.css';
+import '@styles/aside/aside-card-events.css';
+import '@styles/aside/aside-card-forms.css';
 import { AiOutlineHeart, AiOutlineMessage, AiOutlineTeam, AiOutlinePlusCircle, AiOutlineGift } from 'react-icons/ai';
 
 export default function Aside() {

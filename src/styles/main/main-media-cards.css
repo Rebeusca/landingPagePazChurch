@@ -69,6 +69,7 @@
     background-color: #FFFFFF;
     background-size: cover;
     background-position: center;
+    height: 350px;
 }
 
 .app-media-card-buttons {
@@ -93,6 +94,7 @@
     background-image: url('/card-celula.jpg');
     background-size: cover;
     background-position: center;
+    height: 350px;
 }
 
 .celula-media-card-title {
@@ -131,16 +133,16 @@
         margin-right: auto;
         padding: 0; /* Remove o padding para permitir que os cards ocupem toda a largura */
         box-sizing: border-box;
-        height: 396px;
+        height: 360px;
     }
 
     .app-media-card-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         margin-top: 2.5rem;
     }
 
     .app-media-card-subtitle {
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin-bottom: 0;
     }
 
@@ -150,12 +152,12 @@
     }
 
     .celula-media-card-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         margin-top: 2.5rem;
     }
 
     .celula-media-card-subtitle {
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin-bottom: 0;
         max-width: 80%;
     }

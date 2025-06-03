@@ -1,5 +1,5 @@
-import '../styles/main-cards-info-section.css';
-import '../styles/main-media-cards.css';
+import '@styles/main/main-cards-info-section.css';
+import '@styles/main/main-media-cards.css';
 
 export default function Main() {
     return (

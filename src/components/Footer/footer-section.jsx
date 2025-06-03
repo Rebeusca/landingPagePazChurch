@@ -1,7 +1,7 @@
 import React from 'react';
 import { AiFillFacebook, AiFillInstagram, AiFillYoutube, AiFillSpotify } from 'react-icons/ai';
 import { BiLogoDeezer } from "react-icons/bi";
-import '../styles/footer-section.css';
+import '@styles/footer/footer-section.css';
 
 export default function Footer() {
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/aside-spotify-card.css';
-import '../styles/aside-card-events.css';
+import '@styles/aside/aside-spotify-card.css';
+import '@styles/aside/aside-card-events.css';
 
 export default function SpotifyCard() {
     return (

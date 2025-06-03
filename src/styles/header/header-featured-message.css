@@ -2,6 +2,8 @@
     width: 100%;
     max-width: 1150px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1; /* Valor baixo para ficar atrás da navbar */
 }
 
 .featured-message-content {

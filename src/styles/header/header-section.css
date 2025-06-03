@@ -1,7 +1,9 @@
 .header-container {
     font-family: Open Sans, Arial, sans-serif;
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: visible; /* Alterado de hidden para visible */
+    position: relative;
+    z-index: 9999; /* Valor alto para garantir precedência */
 }
 
 .header-container-content {
@@ -38,10 +40,11 @@
 }
 
 .nav-links {
-    z-index: 9999;
+    z-index: 10000;
     height: 44.8px;
     display: flex;
     align-items: center;
+    position: relative; /* Para conter corretamente os elementos de dropdown */
 }
 
 .nav-links svg {
@@ -73,6 +76,15 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    position: relative;
+}
+
+.dropdown-label svg {
+    transition: transform 0.3s ease;
+}
+
+.mobile-dropdown-icon {
+    display: none; /* Esconde os ícones mobile por padrão (desktop) */
 }
 
 .dropdown-menu {
@@ -83,7 +95,7 @@
     box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
     border: 1px solid #e5e5e5;
     width: 200px;
-    z-index: 999;
+    z-index: 99999; /* Valor muito alto para garantir que fique acima de tudo */
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
@@ -134,7 +146,12 @@
     background: none;
     border: none;
     cursor: pointer;
-    }
+    position: relative;
+}
+
+.menu-toggle svg {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
 @media (max-width: 1035px) {
     .header-container-content {
@@ -209,10 +226,14 @@
         visibility: visible;
         transform: none;
         background-color: #f5f5f5;
+        border: none;
+        margin-top: 1rem;
     }
 
     .dropdown.open li {
+        padding: 1rem 0;
         background-color: white;
+        border: none;
     }
     
     .dropdown:hover .dropdown-menu {
@@ -230,6 +251,30 @@
     }
     
     .dropdown-label {
-        justify-content: flex-start;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .mobile-dropdown-icon {
+        transition: transform 0.3s ease;
+    }
+    
+    .mobile-dropdown-icon {
+        display: block; /* Mostra os ícones mobile no modo mobile */
+        position: absolute;
+        right: 1rem;
+    }
+    
+    /* Esconde o ícone ChevronDown original quando estiver no mobile */
+    .dropdown-label > svg:not(.mobile-dropdown-icon) {
+        display: none;
+    }
+    
+    .dropdown.open .mobile-dropdown-icon.down {
+        display: none;
+    }
+    
+    .dropdown:not(.open) .mobile-dropdown-icon.up {
+        display: none;
     }
 }
