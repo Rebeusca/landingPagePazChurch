@@ -40,19 +40,19 @@ export default function HeaderFeaturedMessage() {
 
                         <div className="contact-item">
                             <a href="https://www.facebook.com/pazquixeramobim" target="_blank">
-                                <AiFillFacebook size={25} color='#4B4B4B' />
+                                <AiFillFacebook size={25} color="var(--color-gray-800)" />
                             </a>
                             <a href="https://www.instagram.com/pazquixeramobim/" target="_blank">
-                                <AiFillInstagram size={25} color='#4B4B4B' />
+                                <AiFillInstagram size={25} color="var(--color-gray-800)" />
                             </a>
                             <a href="https://www.youtube.com/pazquixeramobim" target="_blank">
-                                <AiFillYoutube size={25} color='#4B4B4B' />
+                                <AiFillYoutube size={25} color="var(--color-gray-800)" />
                             </a>
                             <a href="https://open.spotify.com/show/474foaQdJ5ewe2yGcRFhMF?si=a273abcb3a9e41f2" target="_blank">
-                                <AiFillSpotify size={25} color='#4B4B4B' />
+                                <AiFillSpotify size={25} color="var(--color-gray-800)" />
                             </a>
                             <a href="https://dzr.page.link/mAgL7qTUBbAhhgYg6" target="_blank">
-                                <BiLogoDeezer size={25} color='#4B4B4B' />
+                                <BiLogoDeezer size={25} color="var(--color-gray-800)" />
                             </a>
                         </div>
                     </div>

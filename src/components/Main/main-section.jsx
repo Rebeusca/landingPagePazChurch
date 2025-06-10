@@ -35,10 +35,10 @@ export default function Main() {
                             </div>
                             <div className="app-media-card-buttons">
                                 <a href="">
-                                    <img src="/google-play.png" alt="" />
+                                    <img src="main/card-app/google-play.png" alt="" />
                                 </a>
                                 <a href="">
-                                    <img src="/app-store.png" alt="" />
+                                    <img src="main/card-app/app-store.png" alt="" />
                                 </a>
                             </div>
                         </div>

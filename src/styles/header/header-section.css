@@ -7,8 +7,8 @@
 }
 
 .header-container-content {
-    background-color: white;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.08);
+    background-color: var(--color-white);
+    box-shadow: 0px 10px 10px var(--color-shadow-light);
     padding: 0.8rem;
     height: 85px;
     width: 100%;
@@ -91,9 +91,9 @@
     position: absolute;
     top: 2.5rem;
     left: 0;
-    background: white;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-    border: 1px solid #e5e5e5;
+    background: var(--color-white);
+    box-shadow: 0px 4px 10px var(--color-shadow-light);
+    border: 1px solid var(--color-gray-300);
     width: 200px;
     z-index: 99999; /* Valor muito alto para garantir que fique acima de tudo */
     opacity: 0;
@@ -153,6 +153,7 @@
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* Style Responsivo */
 @media (max-width: 1035px) {
     .header-container-content {
         overflow: visible;
@@ -182,10 +183,10 @@
         left: 0;
         right: 0;
         width: 100%;
-        background-color: white;
+        background-color: var(--color-white);
         flex-direction: column;
         padding: 1rem 2rem;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 8px 16px var(--color-shadow-light);
         display: none; /* padrão: escondido */
         z-index: 9999;
     }
@@ -211,7 +212,7 @@
     
     .nav-links li {
         padding: 1rem;
-        border-bottom: 1px solid #e5e5e5;
+        border-bottom: 1px solid var(--color-gray-300);
         width: 100%;
         text-align: left;
     }
@@ -225,14 +226,14 @@
         opacity: 1;
         visibility: visible;
         transform: none;
-        background-color: #f5f5f5;
+        background-color: var(--color-gray-100);
         border: none;
         margin-top: 1rem;
     }
 
     .dropdown.open li {
         padding: 1rem 0;
-        background-color: white;
+        background-color: var(--color-white);
         border: none;
     }
     
@@ -247,7 +248,7 @@
     
     .dropdown-menu li {
         padding: 0.8rem;
-        border-bottom: 1px solid #e5e5e5;
+        border-bottom: 1px solid var(--color-gray-300);
     }
     
     .dropdown-label {

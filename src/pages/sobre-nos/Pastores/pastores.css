@@ -1,0 +1,229 @@
+.pastores-main {
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.pastores-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.pastores-header {
+    background-image: linear-gradient(var(--color-shadow-light-medium), var(--color-shadow-light-medium)), url('./pages/sobre-nos/pastores/pastores-header.jpg');
+    background-size: cover;
+    background-position: 20% 20%;
+    width: 100%;
+    height: 590px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pastores-header h1 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    letter-spacing: 0.8rem;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin: 0;
+    text-align: center;
+}
+
+.pastores-header p {
+    font-size: 1.2rem;
+    color: var(--color-white);
+    max-width: 800px;
+}
+
+.pastores-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    background-color: var(--color-off-white);
+    max-width: 1200px;
+    width: 100%;
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--color-shadow-light);
+}
+
+.pastores-intro {
+    max-width: 900px;
+    text-align: center;
+    margin: 2rem auto;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-text-primary);
+}
+
+.pastores-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 2.5rem;
+    padding: 1rem;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.pastor-card {
+    background-color: var(--color-white);
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 10px 20px var(--color-shadow-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 4px solid var(--color-primary);
+}
+
+.pastor-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary));
+}
+
+.pastor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--color-shadow-medium);
+}
+
+.pastor-card header {
+    margin-bottom: 1rem;
+}
+
+.pastor-card h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: var(--color-brand-dark-blue);
+}
+
+.pastor-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 0.5rem 0 0;
+    opacity: 0.8;
+}
+
+.pastor-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-dark-gray);
+    margin: 1.5rem 0;
+}
+
+.pastor-image-container {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    overflow: hidden;
+    box-shadow: 0 5px 15px var(--color-shadow-light);
+}
+
+.pastor-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.pastor-card:hover .pastor-image-container img {
+    transform: scale(1.05);
+}
+
+.pastor-verse {
+    background-color: var(--color-gray-100);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+    position: relative;
+    font-style: italic;
+    width: 100%;
+}
+
+.pastor-verse p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4B4B4B;
+    margin: 0.5rem 0 0.5rem;
+}
+
+.quote-icon {
+    color: var(--color-primary);
+    opacity: 0.3;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.verse-reference {
+    display: block;
+    text-align: right;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.pastor-socials {
+    display: flex;
+    flex-direction: row;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+.social-icon {
+    color: var(--color-gray-800);
+    transition: all 0.3s ease;
+}
+
+/* Styles Responsivos */
+@media screen and (max-width: 768px) {
+    .pastores-header h1 {
+        font-size: 2rem;
+        letter-spacing: 0.6rem;
+    }
+    
+    .pastores-header p {
+        font-size: 1rem;
+    }
+    
+    .pastores-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .pastor-card {
+        padding: 1.5rem;
+    }
+    
+    .pastor-image-container {
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .pastor-card h2 {
+        font-size: 1.5rem;
+    }
+    
+    .pastor-image-container {
+        height: 200px;
+    }
+    
+    .pastores-intro {
+        font-size: 1rem;
+    }
+}

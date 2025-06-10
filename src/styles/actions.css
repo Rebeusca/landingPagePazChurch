@@ -1,0 +1,26 @@
+.button-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;}
+
+.button-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    box-shadow: 0 4px 10px var(--color-shadow-medium);
+}
+
+.button-actions .btn:hover {
+    background-color: var(--color-primary-medium-dark);
+    transform: translateY(-2px);
+}

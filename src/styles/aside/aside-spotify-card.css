@@ -2,11 +2,11 @@
     font-family: Montserrat, Arial, sans-serif;
     width: 100%;
     max-width: 350px;
-    height: 550px;
-    background-color: #c1defc;
+    height: 530px;
+    background-color: var(--color-background-spotify);
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px var(--color-shadow-light);
     margin: 0;
     grid-column: 2;
     grid-row: 3;
@@ -34,24 +34,25 @@
 }
 
 .spotify-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin: 0;
     line-height: 1;
-    color: #191414;
+    color: var(--color-text-primary);
 }
 
 .spotify-brand {
-    font-size: 2.5rem;
-    color: #1976d2;
+    font-size: 2.3rem;
+    color: var(--color-primary);
     margin-top: 0.2rem;
 }
 
 .spotify-subtitle {
     margin: 0.5rem 0 0 0;
-    font-size: 0.9rem;
-    color: #191414;
+    font-size: 0.8rem;
+    color: var(--color-text-primary);
     font-weight: 500;
+    max-width: 180px;
 }
 
 .spotify-iframe-container {
@@ -69,7 +70,7 @@
     width: 100%;
 }
 
-/* Responsividade */
+/* Style Responsivo */
 @media (max-width: 800px) {
     .spotify-card {
         max-width: 100%;

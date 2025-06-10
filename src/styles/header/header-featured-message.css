@@ -21,10 +21,10 @@
     height: 610px;
     border-radius: 12px;
     overflow: hidden;
-    background-image: url('/main-featured-banner.png');
+    background-image: url('header/featured-message/header-featured-banner.png');
     background-size: cover;
     background-position: center;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 24px var(--color-shadow-medium);
 }
 
 .overlay {
@@ -32,8 +32,8 @@
     bottom: 0;
     width: 100%;
     padding: 2rem;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-    color: white;
+    background: linear-gradient(to top, var(--color-shadow-ligth-medium), transparent);
+    color: var(--color-white);
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -47,7 +47,7 @@
     text-transform: uppercase;
     font-size: 0.75rem;
     letter-spacing: 1px;
-    color: white;
+    color: var(--color-white);
     margin-bottom: 1rem;
 }
 
@@ -77,26 +77,26 @@
 }
 
 .btn.primary {
-    background-color: #0066cc;
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--color-white);
 }
 
 .btn.primary:hover {
-    background-color: #004a99;
+    background-color: var(--color-primary-medium-dark);
 }
 
 .btn.outline {
     background-color: transparent;
-    border: 2px solid white;
-    color: white;
+    border: 2px solid var(--color-white);
+    color: var(--color-white);
 }
 
 .btn.outline:hover {
-    background-color: white;
-    color: #000;
+    background-color: var(--color-white);
+    color: var(--color-black);
 }
 
-/* Smartphones */
+/* Style Responsivo */
 @media (max-width: 768px) {
     .header-featured-message {
         width: 100%;

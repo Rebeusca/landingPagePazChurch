@@ -12,6 +12,7 @@
     margin: 0 auto;
 }
 
+/* Style Responsivo */
 @media (max-width: 800px) {
     .cards-grid-wrapper {
         display: flex;

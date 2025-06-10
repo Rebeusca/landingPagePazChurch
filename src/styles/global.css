@@ -1,12 +1,65 @@
-/* colors */
+/* 
+ * DICIONÁRIO DE CORES
+ */
 :root {
-    --color-blue: #00AEEF;
-    --color-dark-blue: #0B2344;
+    /* Cores principais (Identidade da marca) */
+    --color-primary-lightest: #88cdff; /* Azul muito claro para fundos e elementos de destaque */
+    --color-primary-light: #64b5f6;   /* Azul claro para gradientes e elementos secundários */
+    --color-primary: #1976d2;         /* Azul principal para elementos de destaque e interação */
+    --color-primary-medium: #0d47a1;   /* Azul para hover em botões e links */
+    --color-primary-medium-dark: #004a99;    /* Azul escuro para hover em botões e elementos interativos */
+    --color-primary-dark: #0b2344; /* Azul médio para textos e elementos de fundo */
+    
+    /* Cores institucionais */
+    --color-brand-blue: #00AEEF;      /* Azul institucional original */
+    --color-brand-dark-blue: #0B2344; /* Azul escuro institucional usado em textos principais */
+    
+    /* Cores neutras */
     --color-black: #000000;
     --color-white: #FFFFFF;
-    --color-light-gray: #F5F5F5;
-    --color-dark-gray: #4B4B4B;
-    --color-shadow: #ebebeb;
+    --color-off-white: #F9F9F9;       /* Branco suave para fundos alternativos */
+    
+    /* Tons de cinza */
+    --color-gray-100: #F5F5F5;        /* Cinza muito claro para backgrounds */
+    --color-gray-200: #E9E9E9;        /* Cinza claro para backgrounds secundários */
+    --color-gray-300: #E0E0E0;        /* Cinza para separadores e bordas suaves */
+    --color-gray-400: #CCCCCC;        /* Cinza médio-claro para bordas */
+    --color-gray-500: #999999;        /* Cinza médio para textos desabilitados */
+    --color-gray-600: #666666;        /* Cinza médio-escuro para textos secundários */
+    --color-gray-700: #555555;        /* Cinza escuro para textos secundários */
+    --color-gray-800: #4A4A4A;        /* Cinza escuro para textos importantes */
+    --color-dark-gray: #4B4B4B;       /* Cinza escuro (compatibilidade) */
+    --color-gray-900: #333333;        /* Cinza muito escuro quase preto para textos principais */
+    
+    /* Cores para textos */
+    --color-text-primary: #333333;    /* Cor principal para textos */
+    --color-text-secondary: #666666;  /* Cor para textos secundários e descrições */
+    --color-text-tertiary: #999999;   /* Cor para textos desabilitados ou menos importantes */
+    --color-text-light: #FFFFFF;      /* Cor para texto em fundos escuros */
+    --color-text-highlight: #1976d2;  /* Cor para destaque de texto */
+    
+    /* Cores de feedback */
+    --color-success: #4CAF50;         /* Verde para mensagens de sucesso */
+    --color-warning: #FF9800;         /* Laranja para avisos */
+    --color-error: #F44336;           /* Vermelho para erros */
+    --color-info: #2196F3;            /* Azul informativo */
+    
+    /* Cores para sombras */
+    --color-shadow-light: rgba(0, 0, 0, 0.1);    /* Sombra suave */
+    --color-shadow-light-medium: rgba(0, 0, 0, 0.6); /* Sombra suave média */
+    --color-shadow-medium: rgba(0, 0, 0, 0.18);  /* Sombra média */
+    --color-shadow-strong: rgba(0, 0, 0, 0.25);  /* Sombra forte */
+    --color-shadow-blue: rgba(25, 118, 210, 0.2); /* Sombra azul suave para elementos destacados */
+    
+    /* Cores de gradientes */
+    --color-gradient-primary: linear-gradient(90deg, #1976d2, #64b5f6);  /* Gradiente azul principal */
+    --color-gradient-dark: linear-gradient(to top, rgba(0, 0, 0, 0.8) 60%, rgba(0, 0, 0, 0.4) 90%, transparent 100%); /* Gradiente escuro para overlays */
+    
+    /* Cores de elementos específicos */
+    --color-card-border: #1976d2;     /* Cor da borda lateral dos cards */
+    --color-hover: #1976d2;           /* Cor para efeitos de hover */
+    --color-separator: #E0E0E0;       /* Cor para separadores */
+    --color-background-spotify: #a9d5ff; /* Cor de fundo para o Spotify */
 }
 
 /* reset */
@@ -21,6 +74,8 @@ html, body {
 }
 
 body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-color: var(--color-gray-200);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
 }
