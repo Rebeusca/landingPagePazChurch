@@ -10,8 +10,9 @@ import { NossaHistoria } from '@pages/sobre-nos/Nossa-historia/Nossa-historia';
 import { Pastores } from '@pages/sobre-nos/Pastores/Pastores';
 import { NossaVisao } from '@pages/sobre-nos/Nossa-visao/Nossa-visao';
 import { Cultos } from '@pages/mensagens/cultos/Cultos';
-import { Especiais } from '@pages/mensagens/especiais/Especiais';
-import { DetailCulto } from '@pages/mensagens/cultos/details';
+import { Series } from '@pages/mensagens/especiais/Series';
+import { DetailCulto } from '@pages/mensagens/cultos/details/DetailCulto';
+import { DetailSeries } from './pages/mensagens/especiais/details/DetailSeries';
 import './App.css';
 
 function App() {
@@ -40,10 +41,11 @@ function App() {
         <Route path="/pastores" element={<Pastores />} />
         <Route path="/visao" element={<NossaVisao />} />
         <Route path='/cultos' element={<Cultos />} />
-        <Route path='/especiais' element={<Especiais />} />
+        <Route path='/series' element={<Series />} />
         
         {/* Páginas detalhadas de cultos */}
         <Route path='/cultos/:slug' element={<DetailCulto />} />
+        <Route path='/series/:slug' element={<DetailSeries/>} />
 
         {/* Redirecionamento para a página inicial */}
         <Route path="*" element={<div>404 - Página não encontrada</div>} />
