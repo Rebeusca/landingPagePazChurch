@@ -70,7 +70,7 @@ export default function Header() {
                                 </span>
                                 <ul className='dropdown-menu'>
                                 <li><Link to="/cultos">CULTOS</Link></li>
-                                <li><Link to="/especiais">ESPECIAIS</Link></li>
+                                <li><Link to="/series">SERIES</Link></li>
                                 </ul>
                             </li>
 
