@@ -136,13 +136,13 @@ export function NossaHistoria() {
 
                         <div className="button-actions">
                             <Link 
-                              to="/" 
-                              className="btn"
-                              onClick={() => {
-                                window.scrollTo(0, 0);
-                              }}
-                            >
-                              Voltar para página inicial
+                                to="/" 
+                                className="btn"
+                                onClick={() => {
+                                    window.scrollTo(0, 0);
+                                }}
+                                >
+                                Voltar para página inicial
                             </Link>
                         </div>
                     </div>

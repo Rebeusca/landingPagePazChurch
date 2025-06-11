@@ -5,37 +5,36 @@ import '@styles/actions.css';
 import { FaEye, FaBullseye, FaHeart, FaHandsHelping, FaPray, FaChurch, FaUsers, FaBook } from 'react-icons/fa';
 
 export function NossaVisao() {
-    // Dados dos valores da igreja
     const valoresIgreja = [
         {
-            titulo: "Amor",
-            descricao: "Expressar o amor de Cristo em cada ação, abraçando a todos com compaixão e respeito.",
+            title: "Amor",
+            description: "Expressar o amor de Cristo em cada ação, abraçando a todos com compaixão e respeito.",
             icon: <FaHeart size={32} />,
-            cor: "#88cdff"
+            color: "#88cdff"
         },
         {
-            titulo: "Serviço",
-            descricao: "Servir a comunidade com humildade, atendendo às necessidades espirituais e sociais.",
+            title: "Serviço",
+            description: "Servir a comunidade com humildade, atendendo às necessidades espirituais e sociais.",
             icon: <FaHandsHelping size={32} />,
-            cor: "#64b5f6"
+            color: "#64b5f6"
         },
         {
-            titulo: "Oração",
-            descricao: "Manter uma vida de oração constante, buscando a direção divina em todas as decisões.",
+            title: "Oração",
+            description: "Manter uma vida de oração constante, buscando a direção divina em todas as decisões.",
             icon: <FaPray size={32} />,
-            cor: "#1976d2"
+            color: "#1976d2"
         },
         {
-            titulo: "Comunidade",
-            descricao: "Criar um ambiente acolhedor onde todos se sintam parte da família de Deus.",
+            title: "Comunidade",
+            description: "Criar um ambiente acolhedor onde todos se sintam parte da família de Deus.",
             icon: <FaUsers size={32} />,
-            cor: "#0d47a1"
+            color: "#0d47a1"
         },
         {
-            titulo: "Palavra",
-            descricao: "Fundamentar todas as ações e ensinamentos na Palavra de Deus, sem comprometer a verdade bíblica.",
+            title: "Palavra",
+            description: "Fundamentar todas as ações e ensinamentos na Palavra de Deus, sem comprometer a verdade bíblica.",
             icon: <FaBook size={32} />,
-            cor: "#0b2344"
+            color: "#0b2344"
         }
     ];
 
@@ -83,12 +82,12 @@ export function NossaVisao() {
                         
                         <div className="valores-container">
                             {valoresIgreja.map((valor, index) => (
-                                <div className="valor-card" key={index} style={{"--delay": index * 0.2 + "s", "--card-color": valor.cor}}>
-                                    <div className="valor-icon" style={{backgroundColor: valor.cor}}>
+                                <div className="valor-card" key={index} style={{"--delay": index * 0.2 + "s", "--card-color": valor.color}}>
+                                    <div className="valor-icon" style={{backgroundColor: valor.color}}>
                                         {valor.icon}
                                     </div>
-                                    <h3>{valor.titulo}</h3>
-                                    <p>{valor.descricao}</p>
+                                    <h3>{valor.title}</h3>
+                                    <p>{valor.description}</p>
                                 </div>
                             ))}
                         </div>

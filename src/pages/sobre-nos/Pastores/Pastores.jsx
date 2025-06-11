@@ -9,13 +9,12 @@ const PastorCard = ({ pastor }) => {
     return (
         <article className="pastor-card">
             <header className="pastor-header">
-                <h2>{pastor.nome}</h2>
-                <p>{pastor.cargo}</p>
+                <h2>{pastor.name}</h2>
             </header>
             <div className="pastor-image">
                 <img
-                    src={pastor.imagem}
-                    alt={`Pastor ${pastor.nome}`}
+                    src={pastor.image}
+                    alt={`Pastor ${pastor.name}`}
                     onError={(e) => {
                         e.target.onerror = null;
                         e.target.style.backgroundColor = '#e0e0e0';
@@ -23,16 +22,16 @@ const PastorCard = ({ pastor }) => {
                         e.target.style.justifyContent = 'center';
                         e.target.style.alignItems = 'center';
                         e.target.innerHTML = `<div style="text-align: center; padding: 1rem;">
-                            <strong>${pastor.nome}</strong>
+                            <strong>${pastor.name}</strong>
                         </div>`;
                     }}
                 />
             </div>
-            <p className="pastor-description">{pastor.descricao}</p>
+            <p className="pastor-description">{pastor.description}</p>
             <div className="pastor-verse">
                 <FaQuoteRight size={18} className="quote-icon" />
-                <p>{pastor.versiculo}</p>
-                <span className="verse-reference">📖 {pastor.versiculoReferencia}</span>
+                <p>{pastor.verse}</p>
+                <span className="verse-reference">📖 {pastor.verseReferencia}</span>
             </div>
             <div className="pastor-socials">
                 {pastor.socials.facebook && (
@@ -58,11 +57,11 @@ const PastorCard = ({ pastor }) => {
 export function Pastores() {
     const PastoresData = [
         {
-            nome: "Pastor Exemplo 1",
-            descricao: "Descrição do Pastor 1.",
-            imagem: "./pages/sobre-nos/pastores/pastores-imgs/pastor1.svg",
-            versiculo: "Ide por todo o mundo e pregai o evangelho...",
-            versiculoReferencia: "Marcos 16:15",
+            name: "Pastor Exemplo 1",
+            description: "Descrição do Pastor 1.",
+            image: "./pages/sobre-nos/pastores/pastores-imgs/pastor1.svg",
+            verse: "Ide por todo o mundo e pregai o evangelho...",
+            verseReference: "Marcos 16:15",
             socials: {
                 facebook: "https://www.facebook.com/pazquixeramobim",
                 instagram: "https://www.instagram.com/pazquixeramobim/",
@@ -70,11 +69,11 @@ export function Pastores() {
             }
         },
         {
-            nome: "Pastor Exemplo 2",
-            descricao: "Descrição do Pastor 2.",
-            imagem: "./pages/sobre-nos/pastores/pastores-imgs/pastor2.svg",
-            versiculo: "Ide por todo o mundo e pregai o evangelho...",
-            versiculoReferencia: "Marcos 16:15",
+            name: "Pastor Exemplo 2",
+            description: "Descrição do Pastor 2.",
+            image: "./pages/sobre-nos/pastores/pastores-imgs/pastor2.svg",
+            verse: "Ide por todo o mundo e pregai o evangelho...",
+            verseReference: "Marcos 16:15",
             socials: {
                 facebook: "https://www.facebook.com/pazquixeramobim",
                 instagram: "https://www.instagram.com/pazquixeramobim/",
