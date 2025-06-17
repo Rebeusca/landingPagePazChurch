@@ -2,16 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './series.css';
 import '@styles/actions.css';
-
-
-const seriesData = [
-    {
-        slug: "serie-especial-um-lugar-a-mesa",
-        title: "SÉRIE ESPECIAL: UM LUGAR À MESA",
-        description: "Série de mensagens especiais de Páscoa 2025.",
-        image: "./pages/mensagens/especiais/cards-series/card-serie-pascoa.jpg",
-    }
-];
+import { seriesData } from './details/series-data';
 
 export function Series() {
     return (
@@ -31,7 +22,7 @@ export function Series() {
                         </div>
                         <div className="serie-info">
                             <h2>{serie.title}</h2>
-                            <p className='serie-description'>{serie.description}</p>
+                            <p className='serie-description'>{serie.description || `Uma série com ${serie.episodes?.length || 0} episódios`}</p>
                             <Link to={`/series/${serie.slug}`} className="btn">Saiba mais</Link>
                         </div>
                     </article>
