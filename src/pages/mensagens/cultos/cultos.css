@@ -54,11 +54,6 @@
     overflow: hidden;
 }
 
-.culto-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px var(--color-shadow-medium);
-}
-
 .culto-card::before {
     content: '';
     position: absolute;

@@ -7,7 +7,7 @@ export const cultosData = [
         preacherLink: "/pastores#1",
         theme: "Construindo Famílias Sólidas na Palavra",
         backgroundImage: "/pages/mensagens/cultos/card-cultos/culto-celebracao.svg",
-        abstract: "No culto de família 'Unidos em Cristo', fomos convidados a refletir sobre o papel central que Deus deve ocupar em nossas famílias. Aprendemos princípios bíblicos essenciais para fortalecer os laços familiares através da fé, comunicação e perdão mútuo. O culto destacou como podemos enfrentar os desafios contemporâneos mantendo nossa unidade familiar alicerçada em Cristo.",
+        abstract: "No culto de família 'Unidos em Cristo', fomos convidados a refletir sobre o papel central que Deus deve ocupar em nossas famílias. Aprendemos princípios bíblicos essenciais para fortalecer os laços familiares através da fé, comunicação e perdão mútuo.",
         references: [
             "Salmos 29:1-2 - Tributar ao Senhor honra e glória",
             "João 4:23-24 - Adoradores em espírito e em verdade",
@@ -16,20 +16,20 @@ export const cultosData = [
         ],
         mainPoints: [
             {
-                titulo: "Adoração como estilo de vida",
-                descricao: "Exploramos o conceito de adoração além dos momentos de culto coletivo, entendendo-a como um estilo de vida que perpassa todas as áreas de nossa existência. Discutimos como nossas escolhas diárias, relacionamentos e até mesmo nosso trabalho podem ser expressões de adoração a Deus."
+                title: "Adoração como estilo de vida",
+                description: "Exploramos o conceito de adoração além dos momentos de culto coletivo, entendendo-a como um estilo de vida que perpassa todas as áreas de nossa existência. Discutimos como nossas escolhas diárias, relacionamentos e até mesmo nosso trabalho podem ser expressões de adoração a Deus."
             },
             {
-                titulo: "A transformação que ocorre na presença de Deus",
-                descricao: "Analisamos como a exposição regular à presença de Deus através da adoração genuína produz transformação interna, renovando nossa mente e alinhando nosso caráter ao de Cristo. Compartilhamos testemunhos de vidas transformadas através da adoração persistente."
+                title: "A transformação que ocorre na presença de Deus",
+                description: "Analisamos como a exposição regular à presença de Deus através da adoração genuína produz transformação interna, renovando nossa mente e alinhando nosso caráter ao de Cristo. Compartilhamos testemunhos de vidas transformadas através da adoração persistente."
             },
             {
-                titulo: "Adoração em tempos de dificuldade",
-                descricao: "Refletimos sobre o poder da adoração em momentos de crise, dor e incerteza. Estudamos exemplos bíblicos como Jó, Davi e Paulo e Silas, que escolheram adorar em circunstâncias extremamente adversas e como isso mudou suas situações."
+                title: "Adoração em tempos de dificuldade",
+                description: "Refletimos sobre o poder da adoração em momentos de crise, dor e incerteza. Estudamos exemplos bíblicos como Jó, Davi e Paulo e Silas, que escolheram adorar em circunstâncias extremamente adversas e como isso mudou suas situações."
             },
             {
-                titulo: "Criando uma cultura de louvor na comunidade",
-                descricao: "Discutimos a importância de fomentar um ambiente de adoração autêntica em nossa igreja, onde todos se sintam convidados a expressar seu louvor independentemente de talentos musicais. Abordamos como podemos usar diferentes expressões artísticas para glorificar a Deus."
+                title: "Criando uma cultura de louvor na comunidade",
+                description: "Discutimos a importância de fomentar um ambiente de adoração autêntica em nossa igreja, onde todos se sintam convidados a expressar seu louvor independentemente de talentos musicais. Abordamos como podemos usar diferentes expressões artísticas para glorificar a Deus."
             }
         ],
         conclusion: "A verdadeira adoração nunca deixa as coisas como estão. Quando entramos na presença de Deus com corações sinceros, algo sempre muda - seja em nós, à nossa volta ou em ambos. A adoração é o nosso convite para Deus reinar em cada área da nossa vida, e também nossa declaração de guerra contra tudo o que tenta nos afastar dEle. Quando nos comprometemos com uma vida de adoração autêntica, nos tornamos canais da Sua glória e testemunhas vivas do Seu poder transformador.",
