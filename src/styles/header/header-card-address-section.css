@@ -41,7 +41,7 @@
 .address-item h4 {
     font-size: 1rem;
     font-weight: 400;
-    color: var(--color-brand-dark-blue);
+    color: var(--color-primary);
     margin-bottom: 5.5px;
 }
 
