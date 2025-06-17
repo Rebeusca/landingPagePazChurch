@@ -1,30 +1,13 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '@styles/aside/aside-card-events.css';
 import '@styles/aside/aside-card-forms.css';
+import { agendaData } from '../../pages/agenda/agenda-data'
 import { AiOutlineHeart, AiOutlineMessage, AiOutlineTeam, AiOutlinePlusCircle, AiOutlineGift, AiOutlineCalendar, AiOutlineEnvironment, AiOutlineClockCircle } from 'react-icons/ai';
-
-// Dados de exemplo para os próximos eventos
-// Em um ambiente de produção, esses dados viriam provavelmente de uma API
-const eventosProximos = [
-    {
-        id: 1,
-        titulo: "Culto de Celebração",
-        data: "Domingo, 19h",
-        local: "Templo Sede",
-        descricao: "Venha celebrar conosco!"
-    },
-    {
-        id: 2,
-        titulo: "Culto de Jovens",
-        data: "Sábado, 19h",
-        local: "Templo Sede",
-        descricao: "Uma noite especial para nossa juventude"
-    }
-];
 
 export default function Aside() {
     const [eventoAtual, setEventoAtual] = useState(0);
-    const listaEventos = eventosProximos;
+    const listaEventos = agendaData.filter(evento => evento.isHighlighted);
     
     // Efeito para alternar entre os eventos a cada segundo
     useEffect(() => {
@@ -54,23 +37,23 @@ export default function Aside() {
                                             key={evento.id}
                                             className={`event-item ${index === eventoAtual ? 'active' : ''}`}
                                         >
-                                            <h3 className="event-title">{evento.titulo}</h3>
+                                            <h3 className="event-title">{evento.title}</h3>
                                             <div className="event-info">
                                                 <div className="event-detail">
                                                     <AiOutlineCalendar className="event-icon" />
-                                                    <span>{evento.data}</span>
+                                                    <span>{evento.date}</span>
                                                 </div>
                                                 <div className="event-detail">
                                                     <AiOutlineEnvironment className="event-icon" />
-                                                    <span>{evento.local}</span>
+                                                    <span>{evento.location}</span>
                                                 </div>
-                                                <p className="event-description">{evento.descricao}</p>
+                                                <p className="event-description">{evento.description}</p>
                                             </div>
                                         </div>
                                     ))}
                                 </div>
                                 <div className="event-button">
-                                    <a href="#" className='event-btn'>Agenda</a>
+                                    <Link to="/agenda" className='event-btn'>Agenda</Link>
                                 </div>
                                 
                                 {/* Indicadores de navegação - pontinhos */}
