@@ -13,6 +13,7 @@ import { Cultos } from '@pages/mensagens/cultos/Cultos';
 import { Series } from '@pages/mensagens/especiais/Series';
 import { DetailCulto } from '@pages/mensagens/cultos/details/DetailCulto';
 import { DetailSeries } from './pages/mensagens/especiais/details/DetailSeries';
+import { Agenda } from '@pages/agenda/Agenda';
 import './App.css';
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
         <Route path="/visao" element={<NossaVisao />} />
         <Route path='/cultos' element={<Cultos />} />
         <Route path='/series' element={<Series />} />
+        <Route path='/agenda' element={<Agenda />} />
         
         {/* Páginas detalhadas de cultos */}
         <Route path='/cultos/:slug' element={<DetailCulto />} />
