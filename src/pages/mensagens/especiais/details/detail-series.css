@@ -230,3 +230,34 @@
     border-top: 1px solid var(--color-gray-200);
     box-shadow: inset 0 10px 15px -10px var(--color-shadow-light);
 }
+
+@media (max-width: 768px) {
+    .detalhe-series-header {
+        padding: 2rem 1rem;
+    }
+
+    .detalhe-series-content {
+        padding: 2rem 1rem;
+    }
+
+    .detalhe-series-episode-item {
+        margin-bottom: 1rem;
+    }
+
+    .detalhe-series-episode-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .detalhe-series-episode-header::after {
+        right: auto;
+        left: 0;
+        top: auto;
+        bottom: -20px;
+        transform: none;
+    }
+
+    .detalhe-series-episode-toggle {
+        margin-top: 1rem;
+    }
+}
