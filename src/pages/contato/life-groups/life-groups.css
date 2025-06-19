@@ -1,0 +1,227 @@
+.life-groups-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/public/pages/contato/life-groups/life-groups-header.jpg');
+    background-size: cover;
+    background-position: 70% 15%;
+    width: 100%;
+    height: 590px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+}
+
+.life-groups-header h1 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    letter-spacing: 0.8rem;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+}
+
+.life-groups-header p {
+    font-size: 1.2rem;
+    color: var(--color-white);
+    max-width: 800px;
+    text-align: center;
+}
+
+.life-groups-main {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 2rem;
+    gap: 2.5rem;
+    background-color: var(--color-gray-100);
+    max-width: 1200px;
+    margin: 2rem auto;
+    border-radius: 10px;
+}
+
+.life-groups-introduction {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding: 2rem;
+    background-color: var(--color-white);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px var(--color-shadow-light);
+}
+
+.life-groups-section-title {
+    font-size: 2rem;
+    color: var(--color-brand-dark-blue);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.life-groups-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--color-primary);
+}
+
+.life-groups-introduction p {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+.life-groups-list {
+    width: 100%;
+}
+
+.life-groups-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.life-group-item {
+    background-color: var(--color-white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px var(--color-shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.life-group-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--color-shadow-medium);
+}
+
+.life-group-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.life-group-content {
+    padding: 1.5rem;
+}
+
+.life-group-info h3 {
+    font-size: 1.4rem;
+    color: var(--color-brand-dark-blue);
+    margin: 1.5rem 1.5rem 1rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 0.75rem;
+}
+
+.life-group-item p {
+    padding: 0 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-text-secondary);
+}
+
+.life-group-item ul {
+    list-style: none;
+    padding: 0 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.life-group-item .life-group-info {
+    flex-grow: 1;
+    padding-bottom: 1rem;
+}
+
+.life-group-item ul li {
+    color: var(--color-text-secondary);
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.life-group-item ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+.life-group-item strong {
+    color: var(--color-brand-dark-blue);
+    font-weight: 600;
+}
+
+.life-group-contact {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    margin-top: auto;
+}
+
+.life-group-contact i {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    color: var(--color-primary);
+}
+
+.life-group-contact span {
+    color: var(--color-text-secondary);
+    bottom: 0;
+    margin: 2rem 0;
+}
+
+.button-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .life-groups-items {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .life-groups-header {
+        height: 450px;
+    }
+    
+    .life-groups-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .life-groups-section-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .life-groups-header {
+        height: 350px;
+    }
+    
+    .life-groups-header h1 {
+        font-size: 1.8rem;
+        letter-spacing: 0.5rem;
+    }
+    
+    .life-groups-items {
+        grid-template-columns: 1fr;
+    }
+    
+    .life-groups-introduction {
+        padding: 1.5rem;
+    }
+}

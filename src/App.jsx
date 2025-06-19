@@ -15,6 +15,7 @@ import { DetailCulto } from '@pages/mensagens/cultos/details/DetailCulto';
 import { DetailSeries } from './pages/mensagens/especiais/details/DetailSeries';
 import { Agenda } from '@pages/agenda/Agenda';
 import { Contribua } from '@pages/contribua/Contribua';
+import { LifeGroups } from '@pages/contato/life-groups/LifeGroups';
 import './App.css';
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
         <Route path='/series' element={<Series />} />
         <Route path='/agenda' element={<Agenda />} />
         <Route path='/contribua' element={<Contribua />} />
+        <Route path='/life-groups' element={<LifeGroups />} />
         
         {/* Páginas detalhadas de cultos */}
         <Route path='/cultos/:slug' element={<DetailCulto />} />
