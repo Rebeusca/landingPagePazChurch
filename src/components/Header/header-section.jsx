@@ -92,8 +92,8 @@ export default function Header() {
                                 <ChevronUp size={15} color="var(--color-brand-dark-blue)" className='mobile-dropdown-icon up'/>
                                 </span>
                                 <ul className='dropdown-menu'>
-                                <li><Link to="/celulas">CÉLULAS</Link></li>
-                                <li><Link to="/voluntarios">VOLUNTÁRIOS</Link></li>
+                                <li><Link to="/life-groups">LIFE GROUPS</Link></li>
+                                {/* <li><Link to="/voluntarios">VOLUNTÁRIOS</Link></li> */}
                                 </ul>
                             </li>
 
