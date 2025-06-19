@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { AiFillFacebook, AiFillInstagram, AiFillYoutube, AiFillSpotify } from 'react-icons/ai';
 import { BiLogoDeezer } from "react-icons/bi";
 import '@styles/header/header-featured-message.css';
@@ -15,7 +16,7 @@ export default function HeaderFeaturedMessage() {
                             <h2 className="title">Casas de Paz | Lição 3: A Essência É Jesus</h2>
                             <div className="buttons">
                                 <a href="#" className="btn primary">ACESSAR</a>
-                                <a href="#" className="btn outline">CULTOS</a>
+                                <Link to='/cultos' className='btn outline'>CULTOS</Link>
                             </div>
                         </div>
                     </div>
