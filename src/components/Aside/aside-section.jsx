@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '@styles/aside/aside-card-events.css';
 import '@styles/aside/aside-card-forms.css';
 import { agendaData } from '../../pages/agenda/agenda-data'
-import { AiOutlineHeart, AiOutlineMessage, AiOutlineTeam, AiOutlinePlusCircle, AiOutlineGift, AiOutlineCalendar, AiOutlineEnvironment, AiOutlineClockCircle } from 'react-icons/ai';
+import { AiOutlineHeart, AiOutlineMessage, AiOutlineTeam, AiOutlinePlusCircle, AiOutlineGift, AiOutlineCalendar, AiOutlineEnvironment, AiOutlineClockCircle, AiOutlineHeatMap } from 'react-icons/ai';
 
 export default function Aside() {
     const [eventoAtual, setEventoAtual] = useState(0);
@@ -83,17 +83,17 @@ export default function Aside() {
 
                         <div className="separator-horizontal"></div>
                         
-                        <a href="/quero-jesus" className="envolvase-item">
+                        <Link to="/quer-jesus" className="envolvase-item">
                             <AiOutlineHeart size={22} className="envolvase-icon" />
                             <span className="envolvase-text">Quero Jesus</span>
-                        </a>
-                        
+                        </Link>
+
                         <div className="separator-horizontal"></div>
-                        
-                        <a href="/celulas" className="envolvase-item">
+
+                        <Link to="/life-groups" className="envolvase-item">
                             <AiOutlineMessage size={22} className="envolvase-icon" />
-                            <span className="envolvase-text">Células</span>
-                        </a>
+                            <span className="envolvase-text">Life Groups</span>
+                        </Link>
                         
                         <div className="separator-horizontal"></div>
                         
@@ -101,22 +101,9 @@ export default function Aside() {
                             <AiOutlineTeam size={22} className="envolvase-icon" />
                             <span className="envolvase-text">Voluntários</span>
                         </a>
-                        
+
                         <div className="separator-horizontal"></div>
                         
-                        <a href="/quero-oracao" className="envolvase-item">
-                            <AiOutlinePlusCircle size={22} className="envolvase-icon" />
-                            <span className="envolvase-text">Quero Oração</span>
-                        </a>
-                        
-                        <div className="separator-horizontal"></div>
-                        
-                        <a href="/contribua" className="envolvase-item">
-                            <AiOutlineGift size={22} className="envolvase-icon" />
-                            <span className="envolvase-text">Contribua</span>
-                        </a>
-                        
-                        <div className="separator-horizontal"></div>
                         </div>
                 </section>
             </div>
