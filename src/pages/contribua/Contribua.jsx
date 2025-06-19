@@ -53,7 +53,7 @@ export function Contribua() {
                     </div>
                 </div>
                 
-                <div className="contribua-content">
+                {/* <div className="contribua-content">
                     <div className="contribua-instructions">
                         <div className="contribua-method-icon">
                             <i className="fas fa-credit-card"></i>
@@ -63,7 +63,7 @@ export function Contribua() {
                         <span>Você pode contribuir com o seu cartão de crédito através do nosso sistema seguro. As doações podem ser parceladas em até 12x.</span>
                         <a href="https://example.com/donate" className="btn">Contribuir</a>
                     </div>
-                </div>
+                </div> */}
                 
                 <div className="contribua-content">
                     <div className="contribua-instructions">
