@@ -1,6 +1,9 @@
 import '@styles/main/main-cards-info-section.css';
 import '@styles/main/main-media-cards.css';
 
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 export default function Main() {
     return (
         <main className='main-container'>
@@ -13,7 +16,7 @@ export default function Main() {
                             Aos Domingos nos reunimos para adorar e expressar gratidão ao nosso Deus!<br />
                             Você e sua família são os nossos convidados especiais.
                             </p>
-                            <a href="#" className="card-button">Saiba mais</a>
+                            <Link to='/cultos' className='card-button'>Saiba mais</Link>
                         </div>
                     </div>
                     <div className="celebration-card-secondary">
@@ -42,7 +45,7 @@ export default function Main() {
                                 </a>
                             </div>
                         </div>
-                        <a href="/celulas" className="media-card celulas-card">
+                        <a href="/life-groups" className="media-card celulas-card">
                             <div className="media-card-content">
                                 <h2 className="celula-media-card-title">
                                     Células - Life Group
