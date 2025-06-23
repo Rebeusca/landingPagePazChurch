@@ -5,7 +5,7 @@ import '@styles/aside/aside-card-forms.css';
 import { agendaData } from '../../pages/agenda/agenda-data'
 import { AiOutlineHeart, AiOutlineMessage, AiOutlineTeam, AiOutlinePlusCircle, AiOutlineGift, AiOutlineCalendar, AiOutlineEnvironment, AiOutlineClockCircle, AiOutlineHeatMap } from 'react-icons/ai';
 
-export default function Aside() {
+export default function Aside({ setFormVisivel }) {
     const [eventoAtual, setEventoAtual] = useState(0);
     const listaEventos = agendaData.filter(evento => evento.isHighlighted);
     
@@ -82,11 +82,11 @@ export default function Aside() {
                         <p className="envolvase-subtitle">nesse propósito: <span className="highlight">salvar vidas!</span></p>
 
                         <div className="separator-horizontal"></div>
-                        
-                        <Link to="/quer-jesus" className="envolvase-item">
+
+                        <button className="envolvase-item" onClick={() => setFormVisivel(true)}>
                             <AiOutlineHeart size={22} className="envolvase-icon" />
                             <span className="envolvase-text">Quero Jesus</span>
-                        </Link>
+                        </button>
 
                         <div className="separator-horizontal"></div>
 

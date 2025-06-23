@@ -1,0 +1,111 @@
+.quer-jesus-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.fechar-form {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.quer-jesus-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-shadow-light-medium);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.quer-jesus-form {
+    background: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    padding: 24px;
+    margin-top: 16px;
+    width: 600px;
+    animation: fadeIn 0.3s ease;
+    position: relative;
+}
+
+.quer-jesus-form h2 {
+    color: var(--color-primary);
+    margin-bottom: 16px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.quer-jesus-form p {
+    color: var(--color-text-secondary);
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.form-group input,
+.form-group textarea {
+    border: 1px solid var(--color-gray-400);
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.quer-jesus-checkbox {
+    margin-top: 12px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.quer-jesus-button-container {
+    text-align: center;
+}
+
+.quer-jesus-button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.quer-jesus-button:hover {
+    background-color: var(--color-primary-medium-dark);
+}
+
+.quer-jesus-success {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.quer-jesus-success h2 {
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

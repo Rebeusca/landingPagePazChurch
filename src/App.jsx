@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
+
 import Header from '@components/Header/header-section';
 import HeaderFeaturedMessage from '@components/Header/header-hero-section';
 import Main from '@components/Main/main-section';
@@ -16,9 +18,12 @@ import { DetailSeries } from './pages/mensagens/especiais/details/DetailSeries';
 import { Agenda } from '@pages/agenda/Agenda';
 import { Contribua } from '@pages/contribua/Contribua';
 import { LifeGroups } from '@pages/contato/life-groups/LifeGroups';
+import { QuerJesus } from '@components/Aside/Forms/querJesus/QuerJesus';
 import './App.css';
 
 function App() {
+  const [formVisivel, setFormVisivel] = useState(false);
+
   return (
     <Router>
       <ScrollToTop />
@@ -32,7 +37,7 @@ function App() {
             <div className='cards-grid-wrapper'>
               <Main />
               <div className='aside-container'>
-                <Aside />
+                <Aside setFormVisivel={setFormVisivel} />
                 <SpotifyCard />
               </div>
             </div>
@@ -48,7 +53,7 @@ function App() {
         <Route path='/agenda' element={<Agenda />} />
         <Route path='/contribua' element={<Contribua />} />
         <Route path='/life-groups' element={<LifeGroups />} />
-        
+
         {/* Páginas detalhadas de cultos */}
         <Route path='/cultos/:slug' element={<DetailCulto />} />
         <Route path='/series/:slug' element={<DetailSeries/>} />
@@ -58,6 +63,9 @@ function App() {
       </Routes>
       
       <Footer />
+
+      {/* Formulários flutuantes */}
+      {formVisivel && <QuerJesus onClose={() => setFormVisivel(false)} />}
     </Router>
   );
 }
