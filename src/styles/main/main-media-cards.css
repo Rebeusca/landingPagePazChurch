@@ -105,7 +105,7 @@
     justify-content: center;
     flex-direction: column;
     gap: 1.2rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 .app-media-card-buttons a {
@@ -166,7 +166,7 @@
 
 }
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
     .media-card {
         display: flex;
         flex-direction: column;
@@ -194,7 +194,7 @@
 
     .app-media-card-buttons {
         gap: 1rem;
-        margin-top: 0;
+        margin-top: 0.5rem;
     }
 
     .celula-media-card-title {
