@@ -33,9 +33,9 @@
 
 .events-card-title {
     font-size: 1.3rem;
+    margin-bottom: 0.5rem;
     font-weight: bold;
     color: var(--color-text-primary);
-    margin-bottom: 2rem;
     position: relative;
     display: inline-block;
 }
@@ -100,7 +100,7 @@
 }
 
 .event-button {
-    margin: 0;
+    margin-top: 2rem;
 }
 
 .event-btn {
