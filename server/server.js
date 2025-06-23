@@ -17,7 +17,7 @@ app.use(morgan('dev'));
 
 //require('./models');
 
-// Rotas da API
+// Rotas reCaptcha
 app.post('/verify-captcha', async (req, res) => {
     const { token } = req.body;
 

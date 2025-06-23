@@ -22,6 +22,81 @@ export function DetailCulto() {
         );
     }
 
+    function verificarReCAPTCHA(e) {
+        const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY ;
+        e.preventDefault();
+        
+        const downloadBtn = e.currentTarget;
+        const originalText = downloadBtn.innerHTML;
+        downloadBtn.innerHTML = 'Verificando segurança...';
+        downloadBtn.disabled = true;
+                
+        const resetButton = () => {
+            downloadBtn.innerHTML = originalText;
+            downloadBtn.disabled = false;
+        };
+        
+        const processarDownload = () => {
+            downloadBtn.innerHTML = 'Preparando PDF...';
+            try {
+                handleDownloadPDF();
+                setTimeout(() => {
+                    downloadBtn.innerHTML = 'Download concluído!';
+                    setTimeout(resetButton, 2000);
+                }, 1000);
+            } catch (error) {
+                downloadBtn.innerHTML = 'Erro ao gerar PDF';
+                setTimeout(resetButton, 2000);
+            }
+        };
+
+        try {
+            window.grecaptcha.ready(() => {
+                window.grecaptcha.execute(siteKey, { action: 'download' })
+                    .then((token) => {
+                        fetch('http://localhost:5000/verify-captcha', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ token }),
+                        })
+                        .then((res) => {
+                            if (!res.ok) {
+                                throw new Error('Erro na resposta do servidor: ' + res.statusText);
+                            }
+                            return res.json();
+                        })
+                        .then(data => {
+                            if (data) {
+                                if (data.success) {
+                                    processarDownload();
+                                } else {
+                                    resetButton();
+                                    if (data.score !== undefined) {
+                                        alert(`Verificação de segurança falhou (score: ${data.score}). Para sua segurança, tente novamente mais tarde.`);
+                                    } else {
+                                        alert('Falha na verificação de segurança. Tente novamente.');
+                                    }
+                                }
+                            }
+                        })
+                        .catch((error) => {
+                            resetButton();
+                            alert('Ocorreu um erro ao verificar a segurança. Tente novamente.');
+                        });
+                    })
+                    .catch((error) => {
+                        resetButton();
+                        alert('Falha ao obter o token do reCAPTCHA. Tente novamente.');
+                    });
+            });
+        } catch (error) {
+            resetButton();
+            alert('Ocorreu um erro ao verificar a segurança. Tente novamente.');
+        }
+    }
+
     function handleDownloadPDF() {
         const doc = new jsPDF();
         const marginX = 10;
@@ -154,7 +229,10 @@ export function DetailCulto() {
                 
                 <div className="detalhe-culto-actions">
                     <Link to="/cultos" className="btn btn-secondary">Voltar para cultos</Link>
-                    <a href="#" className="btn btn-primary" onClick={handleDownloadPDF}>Download da mensagem</a>
+
+                    <a href="#" className="btn btn-primary" onClick={verificarReCAPTCHA}>
+                        <i className="fas fa-download"></i> Download da mensagem (PDF)
+                    </a>
                 </div>
             </div>
         </div>
