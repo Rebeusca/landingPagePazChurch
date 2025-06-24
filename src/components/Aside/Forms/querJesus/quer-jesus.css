@@ -78,6 +78,10 @@
     font-size: 14px;
 }
 
+.quer-jesus-checkbox input {
+    margin-right: 8px;
+}
+
 .quer-jesus-button-container {
     text-align: center;
 }
