@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './quer-jesus.css';
+import '../forms.css';
 
 import { MdClose } from "react-icons/md";
 
@@ -62,13 +62,13 @@ export function QuerJesus({ onClose }) {
     };
 
     return (
-        <div className="quer-jesus-overlay">
-            <div className="quer-jesus-form">
+        <div className="form-overlay">
+            <div className="form">
                 <button className="fechar-form" onClick={onClose}>
                     <MdClose color='var(--color-gray-800)' size={24}/>
                 </button>
                 {submitted ? (
-                    <div className="quer-jesus-success">
+                    <div className="form-success">
                         <h2>Obrigado por sua decisão!</h2>
                         <p>Em breve, nossa equipe pastoral entrará em contato com você.</p>
                     </div>
@@ -128,13 +128,13 @@ export function QuerJesus({ onClose }) {
                                     rows="4"
                                 ></textarea>
                             </div>
-                            
-                            <div className="quer-jesus-checkbox">
+
+                            <div className="form-checkbox">
                                 <input type="checkbox" id="concordo" required />
                                 <label htmlFor="concordo">Concordo em receber contato da equipe pastoral</label>
                             </div>
-                            <div className="quer-jesus-button-container">
-                                <button type="submit" className="quer-jesus-button">Quero seguir a Jesus</button>
+                            <div className="form-button-container">
+                                <button type="submit" className="form-button">Quero seguir a Jesus</button>
                             </div>
                         </form>
                     </>
