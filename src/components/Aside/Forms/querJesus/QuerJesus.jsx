@@ -5,6 +5,8 @@ import { MdClose } from "react-icons/md";
 
 export function QuerJesus({ onClose }) {
     const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
     const [formData, setFormData] = useState({
         nome: '',
         email: '',
@@ -21,10 +23,42 @@ export function QuerJesus({ onClose }) {
     };
 
     // Implementar a lógica de envio do formulário futuramente
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Dados enviados:', formData);
-        setSubmitted(true);
+
+        try {
+            setLoading(true);
+            setError(null);
+
+            if (!formData.nome || !formData.email || !formData.telefone) {
+                throw new Error('Por favor, preencha todos os campos obrigatórios.');
+            }
+
+            const response = await fetch('http://localhost:5000/quer-jesus', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                throw new Error('Erro ao enviar os dados. Tente novamente mais tarde.');
+            }
+
+            setFormData({
+                nome: '',
+                email: '',
+                telefone: '',
+                mensagem: ''
+            });
+            
+            setSubmitted(true);
+        } catch (error) {
+            console.error('Erro ao enviar dados:', error);
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (

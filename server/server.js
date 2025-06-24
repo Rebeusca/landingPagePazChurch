@@ -18,8 +18,18 @@ app.use(morgan('dev'));
 //require('./models');
 
 // Rotas
-app.use('/verify-captcha', require('./routes/verify_reCaptcha'));
-app.use('/api/status', require('./routes/verify_init'));
+try {
+    const reCaptchaRoute = require('./routes/verify_reCaptcha');
+    app.use('/verify-captcha', reCaptchaRoute);
+
+    const statusRoute = require('./routes/verify_init');
+    app.use('/api/status', statusRoute);
+        
+    const querJesusRoute = require('./routes/quer_jesus');
+    app.use('/quer-jesus', querJesusRoute);
+} catch (error) {
+    console.error('Erro ao carregar as rotas:', error);
+}
 
 // Iniciar o servidor
 app.listen(PORT, () => {
