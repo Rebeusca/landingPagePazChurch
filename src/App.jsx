@@ -19,10 +19,14 @@ import { Agenda } from '@pages/agenda/Agenda';
 import { Contribua } from '@pages/contribua/Contribua';
 import { LifeGroups } from '@pages/contato/life-groups/LifeGroups';
 import { QuerJesus } from '@components/Aside/Forms/querJesus/QuerJesus';
+import { LifeGroupForm } from '@components/Aside/Forms/lifeGroup/LifeGroupForm'
+import { Voluntario } from '@components/Aside/Forms/voluntario/Voluntario';
 import './App.css';
 
 function App() {
-  const [formVisivel, setFormVisivel] = useState(false);
+  const [formQueroJesusVisivel, setFormQueroJesusVisivel] = useState(false);
+  const [formLifeGroupVisivel, setFormLifeGroupVisivel] = useState(false);
+  const [formVoluntarioVisivel, setFormVoluntarioVisivel] = useState(false);
 
   return (
     <Router>
@@ -37,7 +41,11 @@ function App() {
             <div className='cards-grid-wrapper'>
               <Main />
               <div className='aside-container'>
-                <Aside setFormVisivel={setFormVisivel} />
+                <Aside 
+                  setFormQueroJesusVisivel={setFormQueroJesusVisivel} 
+                  setFormLifeGroupVisivel={setFormLifeGroupVisivel} 
+                  setFormVoluntarioVisivel={setFormVoluntarioVisivel} 
+                />
                 <SpotifyCard />
               </div>
             </div>
@@ -65,7 +73,9 @@ function App() {
       <Footer />
 
       {/* Formulários flutuantes */}
-      {formVisivel && <QuerJesus onClose={() => setFormVisivel(false)} />}
+      {formQueroJesusVisivel && <QuerJesus onClose={() => setFormQueroJesusVisivel(false)} />}
+      {formLifeGroupVisivel && <LifeGroupForm onClose={() => setFormLifeGroupVisivel(false)} />}
+      {formVoluntarioVisivel && <Voluntario onClose={() => setFormVoluntarioVisivel(false)} />}
     </Router>
   );
 }

@@ -5,7 +5,7 @@ import '@styles/aside/aside-card-forms.css';
 import { agendaData } from '../../pages/agenda/agenda-data'
 import { AiOutlineHeart, AiOutlineMessage, AiOutlineTeam, AiOutlinePlusCircle, AiOutlineGift, AiOutlineCalendar, AiOutlineEnvironment, AiOutlineClockCircle, AiOutlineHeatMap } from 'react-icons/ai';
 
-export default function Aside({ setFormVisivel }) {
+export default function Aside({ setFormQueroJesusVisivel, setFormLifeGroupVisivel, setFormVoluntarioVisivel }) {
     const [eventoAtual, setEventoAtual] = useState(0);
     const listaEventos = agendaData.filter(evento => evento.isHighlighted);
     
@@ -83,24 +83,24 @@ export default function Aside({ setFormVisivel }) {
 
                         <div className="separator-horizontal"></div>
 
-                        <button className="envolvase-item" onClick={() => setFormVisivel(true)}>
+                        <button className="envolvase-item" onClick={() => setFormQueroJesusVisivel(true)}>
                             <AiOutlineHeart size={22} className="envolvase-icon" />
                             <span className="envolvase-text">Quero Jesus</span>
                         </button>
 
                         <div className="separator-horizontal"></div>
 
-                        <Link to="/life-groups" className="envolvase-item">
+                        <button className="envolvase-item" onClick={() => setFormLifeGroupVisivel(true)}>
                             <AiOutlineMessage size={22} className="envolvase-icon" />
                             <span className="envolvase-text">Life Groups</span>
-                        </Link>
+                        </button>
                         
                         <div className="separator-horizontal"></div>
-                        
-                        <a href="/voluntarios" className="envolvase-item">
+
+                        <button onClick={() => setFormVoluntarioVisivel(true)} className="envolvase-item">
                             <AiOutlineTeam size={22} className="envolvase-icon" />
                             <span className="envolvase-text">Voluntários</span>
-                        </a>
+                        </button>
 
                         <div className="separator-horizontal"></div>
                         
