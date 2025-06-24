@@ -83,7 +83,7 @@ export function DetailCulto() {
                         })
                         .catch((error) => {
                             resetButton();
-                            alert('Ocorreu um erro ao verificar a segurança. Tente novamente.');
+                            alert('Ocorreu um erro ao verificar a segurança. Tente novamente.' + error);
                         });
                     })
                     .catch((error) => {

@@ -17,61 +17,9 @@ app.use(morgan('dev'));
 
 //require('./models');
 
-// Rotas reCaptcha
-app.post('/verify-captcha', async (req, res) => {
-    const { token } = req.body;
-
-    // Validação básica do token
-    if (!token) {
-        return res.status(400).json({ success: false, message: 'Token de reCAPTCHA não fornecido.' });
-    }
-        
-    // Usar a chave secreta do ambiente ou a chave fixa como fallback
-    const secretKey = process.env.RECAPTCHA_SECRET_KEY;
-    
-    try {
-        const response = await axios.post(`https://www.google.com/recaptcha/api/siteverify`, null, {
-            params: {
-                secret: secretKey,
-                response: token
-            }
-        });
-
-        if (response.data.success) {
-            // Verificar se o score está em um nível aceitável (0.5 ou maior)
-            const score = response.data.score || 0;
-            
-            if (score >= 0.5) {
-                return res.json({ 
-                    success: true, 
-                    message: 'reCAPTCHA verificado com sucesso.',
-                    score: score
-                });
-            } else {
-                return res.status(403).json({ 
-                    success: false, 
-                    message: 'Score de reCAPTCHA muito baixo.',
-                    score: score
-                });
-            }
-        }
-        
-        return res.status(400).json({ 
-            success: false, 
-            message: 'Falha na verificação do reCAPTCHA.'
-        });
-    } catch (error) {
-        return res.status(500).json({ 
-            success: false, 
-            message: 'Erro interno do servidor.'
-        });
-    }
-});
-
-// Rota para verificação do servidor
-app.get('/api/status', (req, res) => {
-    res.json({ message: 'API funcionando corretamente' });
-});
+// Rotas
+app.use('/verify-captcha', require('./routes/verify_reCaptcha'));
+app.use('/api/status', require('./routes/verify_init'));
 
 // Iniciar o servidor
 app.listen(PORT, () => {
