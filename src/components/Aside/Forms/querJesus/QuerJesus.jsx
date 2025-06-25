@@ -63,7 +63,10 @@ export function QuerJesus({ onClose }) {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    ...formData,
+                    recaptchaToken: recaptchaResult.token
+                }),
             });
 
             if (!response.ok) {
