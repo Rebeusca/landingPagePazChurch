@@ -21,11 +21,42 @@ export function LifeGroupForm({ onClose }) {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Adicionar lógica para enviar os dados via API
-        console.log('Formulário enviado:', formData);
-        setSubmitted(true);
+
+        try {
+            setLoading(true);
+            setError(null);
+
+            if (!formData.nome || !formData.email || !formData.telefone) {
+                throw new Error('Por favor, preencha todos os campos obrigatórios.');
+            }
+
+            const response = await fetch('http://localhost:5000/life-group', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                throw new Error('Erro ao enviar os dados. Tente novamente mais tarde.');
+            }
+
+            setFormData({
+                nome: '',
+                email: '',
+                telefone: '',
+                mensagem: ''
+            });
+            
+            setSubmitted(true);
+        } catch (error) {
+            console.error('Erro ao enviar dados:', error);
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -101,7 +132,7 @@ export function LifeGroupForm({ onClose }) {
                                 <label htmlFor="concordo">Concordo em receber contato da equipe pastoral</label>
                             </div>
                             <div className="form-button-container">
-                                <button type="submit" className="form-button">Quero seguir a Jesus</button>
+                                <button type="submit" className="form-button">Quero hospedar um Life Group</button>
                             </div>
                         </form>
                     </>
