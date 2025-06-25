@@ -25,8 +25,11 @@ try {
     const statusRoute = require('./routes/verify_init');
     app.use('/api/status', statusRoute);
         
-    const querJesusRoute = require('./routes/quer_jesus');
+    const querJesusRoute = require('./routes/forms/quer_jesus');
     app.use('/quer-jesus', querJesusRoute);
+
+    const lifeGroupRoute = require('./routes/forms/life_group_form');
+    app.use('/life-group', lifeGroupRoute);
 } catch (error) {
     console.error('Erro ao carregar as rotas:', error);
 }
