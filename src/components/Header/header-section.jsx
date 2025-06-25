@@ -97,7 +97,7 @@ export default function Header() {
                                 </ul>
                             </li>
 
-                            <li><Link to="/cidades">+ CIDADES</Link></li>
+                            <li><Link to="https://paz.church/" target="_blank" rel="noopener noreferrer">+ CIDADES</Link></li>
                         </ul>
                     </nav>
                 </div>
