@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MdClose } from "react-icons/md";
 import '../forms.css';
+import { executeReCaptcha } from '../../../../utils/recaptchaUtils';
+import { loadReCaptchaScript } from '../../../../utils/recaptchaLoader';
 
 export function Voluntario({ onClose }) {
     const [submitted, setSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [buttonText, setButtonText] = useState('Quero ser um voluntário!');
     const [formData, setFormData] = useState({
         nome: '',
         email: '',
@@ -13,6 +16,18 @@ export function Voluntario({ onClose }) {
         ministerio: '',
         mensagem: ''
     });
+
+    useEffect(() => {
+        const leadReCaptcha =async () => {
+            try {
+                await loadReCaptchaScript();
+            } catch (err) {
+                console.error('Erro ao carregar reCAPTCHA:', err);
+            }
+        };
+
+        leadReCaptcha();
+    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -25,20 +40,29 @@ export function Voluntario({ onClose }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        if (loading) return;
+
         try {
             setLoading(true);
+            setButtonText('Enviando...');
             setError(null);
 
             if (!formData.nome || !formData.email || !formData.telefone || !formData.ministerio) {
                 throw new Error('Por favor, preencha todos os campos obrigatórios.');
             }
 
+            setButtonText('Verificando validação...');
+            const recaptchaResult = await executeReCaptcha('submit_form');
+
             const response = await fetch('http://localhost:5000/voluntario', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    ...formData,
+                    recaptchaToken: recaptchaResult.token
+                }),
             });
 
             if (!response.ok) {
@@ -58,6 +82,7 @@ export function Voluntario({ onClose }) {
             console.error('Erro ao enviar dados:', error);
         } finally {
             setLoading(false);
+            setButtonText('Quero ser um voluntário!');
         }
     };
 
@@ -155,7 +180,13 @@ export function Voluntario({ onClose }) {
                                 <label htmlFor="concordo">Concordo em receber contato da equipe pastoral</label>
                             </div>
                             <div className="form-button-container">
-                                <button type="submit" className="form-button">Quero ser um voluntário!</button>
+                                <button 
+                                    type="submit" 
+                                    className="form-button"
+                                    disabled={loading}
+                                >
+                                    {buttonText}
+                                </button>
                             </div>
                         </form>
                     </>
