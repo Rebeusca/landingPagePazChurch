@@ -56,9 +56,23 @@ export function LifeGroups() {
                         ))}
                     </div>
                 </section>
+
+                <section className="life-group-participation">
+                    <h2 className="life-groups-section-title">Como Participar</h2>
+                    <p>
+                        Quer abrir as portas da sua casa para algo transformador?<br />
+                        Ser anfitrião de um Life Group é uma oportunidade de impactar vidas com amor, fé e cuidado.
+                        Se você sente esse chamado, preencha o formulário e logo estaremos em contato com você.
+                    </p>
+                    <div className='button-actions'>
+                        <a href="/" target="_blank" rel="noopener noreferrer">
+                            <button className='btn'>Quero hospedar um Life Group!</button>
+                        </a>
+                    </div>
+                </section>
                 
                 <div className="button-actions">
-                    <a href="https://paz.church/" target="_blank" rel="noopener noreferrer">
+                    <a href="/" target="_blank" rel="noopener noreferrer">
                         <button className='btn'>Voltar para página inicial</button>
                     </a>
                 </div>

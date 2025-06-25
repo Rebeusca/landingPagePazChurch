@@ -180,6 +180,26 @@
     margin: 2rem 0;
 }
 
+.life-group-participation {
+    padding: 1rem 1.5rem;
+    background-color: var(--color-white);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px var(--color-shadow-light);
+}
+
+.life-group-participation h2 {
+    font-size: 1.6rem;
+    color: var(--color-brand-dark-blue);
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.life-group-participation p {
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin: 0 2rem;
+}
+
 .button-actions {
     display: flex;
     justify-content: center;
