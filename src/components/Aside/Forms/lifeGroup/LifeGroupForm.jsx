@@ -157,6 +157,12 @@ export function LifeGroupForm({ onClose }) {
                                 <input type="checkbox" id="concordo" required />
                                 <label htmlFor="concordo">Concordo em receber contato da equipe pastoral</label>
                             </div>
+                            <div className="recaptcha-terms">
+                                Este site é protegido pelo reCAPTCHA e aplicam-se a 
+                                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer"> Política de Privacidade</a> e 
+                                <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer"> Termos de Serviço</a> do Google.
+                            </div>
+                            
                             <div className="form-button-container">
                                 <button 
                                     type="submit" 

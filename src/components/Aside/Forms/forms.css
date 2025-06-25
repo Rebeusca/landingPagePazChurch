@@ -134,6 +134,12 @@
     font-size: 14px;
 }
 
+.recaptcha-terms {
+    margin: 12px 0;
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+}
+
 .form-checkbox {
     margin-top: 12px;
     margin-bottom: 16px;
