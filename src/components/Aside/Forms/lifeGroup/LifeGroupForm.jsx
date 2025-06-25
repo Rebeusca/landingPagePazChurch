@@ -37,7 +37,10 @@ export function LifeGroupForm({ onClose }) {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    ...formData,
+                    recaptchaToken: recaptchaResult.token
+                }),
             });
 
             if (!response.ok) {
@@ -132,7 +135,7 @@ export function LifeGroupForm({ onClose }) {
                                 <label htmlFor="concordo">Concordo em receber contato da equipe pastoral</label>
                             </div>
                             <div className="form-button-container">
-                                <button type="submit" className="form-button">Quero hospedar um Life Group</button>
+                                <button type="submit" className="form-button">Quero hospedar um Life Group!</button>
                             </div>
                         </form>
                     </>
