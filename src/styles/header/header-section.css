@@ -44,7 +44,7 @@
     height: 44.8px;
     display: flex;
     align-items: center;
-    position: relative; /* Para conter corretamente os elementos de dropdown */
+    position: relative;
 }
 
 .nav-links svg {
@@ -130,7 +130,7 @@
 }
 
 .dropdown-menu li:hover {
-    background-color: var(--color-light-gray);
+    background-color: var(--color-gray-300);
     color: var(--color-black);
 }
 
