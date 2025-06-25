@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../forms.css';
+import { executeReCaptcha } from '../../../../utils/recaptchaUtils';
+import { loadReCaptchaScript } from '../../../../utils/recaptchaLoader';
 
 import { MdClose } from "react-icons/md";
 
@@ -7,12 +9,25 @@ export function QuerJesus({ onClose }) {
     const [submitted, setSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [buttonText, setButtonText] = useState('Quero conhecer Jesus!');
     const [formData, setFormData] = useState({
         nome: '',
         email: '',
         telefone: '',
         mensagem: ''
     });
+
+    useEffect(() => {
+        const loadReCaptcha = async () => {
+            try {
+                await loadReCaptchaScript();
+            } catch (err) {
+                console.error('Erro ao carregar reCAPTCHA:', err);
+            }
+        };
+
+        loadReCaptcha();
+    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -25,12 +40,22 @@ export function QuerJesus({ onClose }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        if (loading) return;
+
         try {
             setLoading(true);
+            setButtonText('Enviando...');
             setError(null);
 
             if (!formData.nome || !formData.email || !formData.telefone) {
                 throw new Error('Por favor, preencha todos os campos obrigatórios.');
+            }
+
+            setButtonText('Verificando validação...');
+            const recaptchaResult = await executeReCaptcha('submit_form');
+
+            if (!recaptchaResult || !recaptchaResult.token) {
+                throw new Error('Falha na verificação do reCAPTCHA. Tente novamente.');
             }
 
             const response = await fetch('http://localhost:5000/quer-jesus', {
@@ -57,6 +82,7 @@ export function QuerJesus({ onClose }) {
             console.error('Erro ao enviar dados:', error);
         } finally {
             setLoading(false);
+            setButtonText('Quero seguir a Jesus!');
         }
     };
 
@@ -133,7 +159,13 @@ export function QuerJesus({ onClose }) {
                                 <label htmlFor="concordo">Concordo em receber contato da equipe pastoral</label>
                             </div>
                             <div className="form-button-container">
-                                <button type="submit" className="form-button">Quero seguir a Jesus!</button>
+                                <button 
+                                    type="submit" 
+                                    className="form-button"
+                                    disabled={loading}
+                                >
+                                    {buttonText}
+                                </button>
                             </div>
                         </form>
                     </>
