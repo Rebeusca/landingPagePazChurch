@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { cultosData } from './culto-data';
 import { jsPDF } from 'jspdf';
+import { executeReCaptcha } from '../../../../utils/recaptchaUtils';
 import './detail-culto.css';
 
 export function DetailCulto() {
@@ -22,8 +23,7 @@ export function DetailCulto() {
         );
     }
 
-    function verificarReCAPTCHA(e) {
-        const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY ;
+    async function verificarReCAPTCHA(e) {
         e.preventDefault();
         
         const downloadBtn = e.currentTarget;
@@ -51,48 +51,21 @@ export function DetailCulto() {
         };
 
         try {
-            window.grecaptcha.ready(() => {
-                window.grecaptcha.execute(siteKey, { action: 'download' })
-                    .then((token) => {
-                        fetch('http://localhost:5000/verify-captcha', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify({ token }),
-                        })
-                        .then((res) => {
-                            if (!res.ok) {
-                                throw new Error('Erro na resposta do servidor: ' + res.statusText);
-                            }
-                            return res.json();
-                        })
-                        .then(data => {
-                            if (data) {
-                                if (data.success) {
-                                    processarDownload();
-                                } else {
-                                    resetButton();
-                                    if (data.score !== undefined) {
-                                        alert(`Verificação de segurança falhou (score: ${data.score}). Para sua segurança, tente novamente mais tarde.`);
-                                    } else {
-                                        alert('Falha na verificação de segurança. Tente novamente.');
-                                    }
-                                }
-                            }
-                        })
-                        .catch((error) => {
-                            resetButton();
-                            alert('Ocorreu um erro ao verificar a segurança. Tente novamente.' + error);
-                        });
-                    })
-                    .catch((error) => {
-                        resetButton();
-                        alert('Falha ao obter o token do reCAPTCHA. Tente novamente.');
-                    });
-            });
+            const result = await executeReCaptcha('download');
+            
+            if (result && result.success) {
+                processarDownload();
+            } else {
+                resetButton();
+                if (result && result.score !== undefined) {
+                    alert(`Verificação de segurança falhou (score: ${result.score}). Para sua segurança, tente novamente mais tarde.`);
+                } else {
+                    alert('Falha na verificação de segurança. Tente novamente.');
+                }
+            }
         } catch (error) {
             resetButton();
+            console.error('Erro na verificação do reCAPTCHA:', error);
             alert('Ocorreu um erro ao verificar a segurança. Tente novamente.');
         }
     }
@@ -102,7 +75,6 @@ export function DetailCulto() {
         const marginX = 10;
         let cursorY = 20;
 
-        // Adiciona a imagem no topo
         const imgWidth = 60;
         const imgHeight = 15;
 
