@@ -1,17 +1,33 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MdClose } from "react-icons/md";
 import '../forms.css';
+
+import { executeReCaptcha } from '../../../../utils/recaptchaUtils';
+import { loadReCaptchaScript } from '../../../../utils/recaptchaLoader';
 
 export function LifeGroupForm({ onClose }) {
     const [submitted, setSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [buttonText, setButtonText] = useState('Quero hospedar um Life Group!');
     const [formData, setFormData] = useState({
         nome: '',
         email: '',
         telefone: '',
         mensagem: ''
     });
+
+    useEffect(() => {
+        const loadReCaptcha = async () => {
+            try {
+                await loadReCaptchaScript();
+            } catch (err) {
+                console.error('Erro ao carregar reCAPTCHA:', err);
+            }
+        };
+
+        loadReCaptcha();
+    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -24,13 +40,19 @@ export function LifeGroupForm({ onClose }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        if (loading) return;
+
         try {
             setLoading(true);
+            setButtonText('Enviando...');
             setError(null);
 
             if (!formData.nome || !formData.email || !formData.telefone) {
                 throw new Error('Por favor, preencha todos os campos obrigatórios.');
             }
+
+            setButtonText('Verificando validação...');
+            const recaptchaResult = await executeReCaptcha('submit_form');
 
             const response = await fetch('http://localhost:5000/life-group', {
                 method: 'POST',
@@ -59,6 +81,7 @@ export function LifeGroupForm({ onClose }) {
             console.error('Erro ao enviar dados:', error);
         } finally {
             setLoading(false);
+            setButtonText('Quero hospedar um Life Group!');
         }
     };
 
@@ -135,7 +158,13 @@ export function LifeGroupForm({ onClose }) {
                                 <label htmlFor="concordo">Concordo em receber contato da equipe pastoral</label>
                             </div>
                             <div className="form-button-container">
-                                <button type="submit" className="form-button">Quero hospedar um Life Group!</button>
+                                <button 
+                                    type="submit" 
+                                    className="form-button"
+                                    disabled={loading}
+                                >
+                                    {buttonText}
+                                </button>
                             </div>
                         </form>
                     </>
