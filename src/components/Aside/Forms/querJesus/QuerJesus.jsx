@@ -22,7 +22,6 @@ export function QuerJesus({ onClose }) {
         }));
     };
 
-    // Implementar a lógica de envio do formulário futuramente
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -134,7 +133,7 @@ export function QuerJesus({ onClose }) {
                                 <label htmlFor="concordo">Concordo em receber contato da equipe pastoral</label>
                             </div>
                             <div className="form-button-container">
-                                <button type="submit" className="form-button">Quero seguir a Jesus</button>
+                                <button type="submit" className="form-button">Quero seguir a Jesus!</button>
                             </div>
                         </form>
                     </>
