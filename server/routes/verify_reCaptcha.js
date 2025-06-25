@@ -9,12 +9,10 @@ const router = express.Router();
 router.post('/', async (req, res) => {
     const { token } = req.body;
 
-    // Validação básica do token
     if (!token) {
         return res.status(400).json({ success: false, message: 'Token de reCAPTCHA não fornecido.' });
     }
         
-    // Usar a chave secreta do ambiente ou a chave fixa como fallback
     const secretKey = process.env.RECAPTCHA_SECRET_KEY;
     
     try {
@@ -26,7 +24,6 @@ router.post('/', async (req, res) => {
         });
 
         if (response.data.success) {
-            // Verificar se o score está em um nível aceitável (0.5 ou maior)
             const score = response.data.score || 0;
             
             if (score >= 0.5) {
