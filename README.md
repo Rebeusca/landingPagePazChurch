@@ -1,12 +1,46 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🖥️ Landing Page - Paz Church Quixeramobim
 
-Currently, two official plugins are available:
+This project is the **final project for my Web Development course at university**. It’s a modern, responsive landing page built for **Paz Church**, designed to communicate spiritual content, connect people through forms, and showcase church events and messages.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Functionalities:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Home page with featured messages and Spotify card;
+- Dedicated pages: Our History, Pastors, Vision;
+- **Sermon section** with detailed individual pages available for PDF export;
+- **Special Series** section with episodes;
+- Sidebar with upcoming events carousel;
+- Floating registration forms;
+- Responsive design with animation effects.
+
+
+## Technologies used:
+
+<p align="left">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+  <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" />
+  <img src="https://img.shields.io/badge/jsPDF-black?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/React_Icons-E91E63?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/CSS--Modules-000?style=for-the-badge&logo=css3&logoColor=white" />
+</p>
+
+## How to run locally:
+
+**Clone the repository:**
+
+    git clone https://github.com/your-username/landing-paz-church.git
+    cd landing-paz-church
+
+**Install dependencies:**
+
+    npm install
+
+**Start the development server:**
+
+    npm run dev:all
+## Autors
+
+- [Rebeca Amorim](https://www.github.com/Rebeusca)
+
