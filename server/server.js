@@ -31,6 +31,9 @@ try {
 
     const voluntarioRoute = require('./routes/forms/voluntario');
     app.use('/voluntario', voluntarioRoute);
+
+    const devocionalRoute = require('./routes/forms/devocional_inscricao');
+    app.use('/devocional-inscricao', devocionalRoute);
 } catch (error) {
     console.error('Erro ao carregar as rotas:', error);
 }
