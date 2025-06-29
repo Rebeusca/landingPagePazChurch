@@ -18,6 +18,7 @@ import { DetailSeries } from './pages/mensagens/especiais/details/DetailSeries';
 import { Agenda } from '@pages/agenda/Agenda';
 import { Contribua } from '@pages/contribua/Contribua';
 import { LifeGroups } from '@pages/contato/life-groups/LifeGroups';
+import Devocional from '@pages/contato/devocional/devocional';
 import { QuerJesus } from '@components/Aside/Forms/querJesus/QuerJesus';
 import { LifeGroupForm } from '@components/Aside/Forms/lifeGroup/LifeGroupForm'
 import { Voluntario } from '@components/Aside/Forms/voluntario/Voluntario';
@@ -61,6 +62,7 @@ function App() {
         <Route path='/agenda' element={<Agenda />} />
         <Route path='/contribua' element={<Contribua />} />
         <Route path='/life-groups' element={<LifeGroups />} />
+        <Route path='/devocional' element={<Devocional />} />
 
         {/* Páginas detalhadas de cultos */}
         <Route path='/cultos/:slug' element={<DetailCulto />} />

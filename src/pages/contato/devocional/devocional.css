@@ -1,0 +1,262 @@
+.devocional-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: var(--font-primary);
+}
+
+.devocional-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 2rem;
+}
+
+.devocional-info {
+    padding: 20px;
+    background-color: var(--color-background-light);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.devocional-info h2 {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.devocional-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--color-text);
+}
+
+.devocional-example {
+    margin-top: 30px;
+    border-top: 1px solid var(--color-border);
+    padding-top: 20px;
+}
+
+.devocional-example h3 {
+    font-size: 1.3rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.message-example {
+    background-color: #f0f7ff;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid var(--color-primary);
+}
+
+.message-example p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.devocional-form-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.form-wrapper {
+    padding: 30px;
+}
+
+.form-wrapper h2 {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.form-wrapper > p {
+    color: var(--color-text-secondary);
+    margin-bottom: 25px;
+}
+
+.devocional-form .form-group {
+    margin-bottom: 20px;
+}
+
+.devocional-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--color-text);
+}
+
+.devocional-form input,
+.devocional-form select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.devocional-form input:focus,
+.devocional-form select:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+.whatsapp-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 8px;
+}
+
+.whatsapp-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background-color: white;
+}
+
+.whatsapp-input input:focus {
+    color: var(--color-primary);
+}
+
+.recaptcha-container {
+    margin: 15px 0;
+}
+
+.recaptcha-disclaimer {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--color-text-tertiary);
+    background-color: var(--color-background-light);
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.recaptcha-disclaimer p {
+    margin: 0;
+}
+
+.recaptcha-disclaimer a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: text-decoration 0.2s ease;
+}
+
+.recaptcha-disclaimer a:hover {
+    text-decoration: underline;
+}
+
+.form-error {
+    background-color: rgba(255, 0, 0, 0.1);
+    border-left: 3px solid var(--color-error);
+    padding: 10px;
+    margin: 10px 0;
+    color: var(--color-error);
+    border-radius: 4px;
+}
+
+.form-button-container {
+    margin-top: 20px;
+}
+
+.form-button {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.form-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.form-disclaimer {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: var(--color-text-tertiary);
+    text-align: center;
+}
+
+.success-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    height: 100%;
+}
+
+.success-message h2 {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin: 20px 0;
+}
+
+.success-message p {
+    color: var(--color-text-secondary);
+    margin-bottom: 10px;
+    max-width: 400px;
+}
+
+/* Responsividade */
+@media screen and (max-width: 992px) {
+    .devocional-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .devocional-info {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .devocional-header h1 {
+        font-size: 2rem;
+    }
+    
+    .devocional-header p {
+        font-size: 1rem;
+    }
+    
+    .form-wrapper {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .devocional-container {
+        padding: 20px 10px;
+    }
+    
+    .devocional-header {
+        padding: 15px 10px;
+    }
+    
+    .recaptcha-container {
+        transform: scale(0.85);
+        transform-origin: left center;
+        margin-left: -20px;
+    }
+}
