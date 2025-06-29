@@ -39,7 +39,7 @@
 }
 
 .nossa-historia-content {
-    background-color: var(--color-white);
+    background-color: var(--color-off-white);
     font-family: 'Montserrat', Arial, sans-serif;
     border-radius: 10px;
     max-width: 1200px;
@@ -61,12 +61,14 @@
 }
 
 .nossa-historia-footer-container {
+    background-color: var(--color-white);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem 2rem 0 2rem;
+    padding: 2rem 1rem;
     flex-direction: column;
-
+    border-radius: 10px;
+    box-shadow:  0px 0px 20px var(--color-shadow-light);
 }
 
 .nossa-historia-footer {
